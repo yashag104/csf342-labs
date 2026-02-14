@@ -246,33 +246,33 @@ Create a top-level module that connects your sub-components to form a complete R
 Choose one R-type instruction (e.g., `sub x5, x3, x4`) and trace its execution.
 
 **1. Instruction Details**
-* **Assembly:** `____________________`
-* **Hex Code:** `0x__________________`
+* **Assembly:** `________sub x5, x3, x4____________`
+* **Hex Code:** `0x________00000000__________`
 
 **2. Field Extraction**
 Decode your instruction manually:
 | Field | Binary Value |
 |-------|--------------|
-| rs1   | `_____`      |
-| rs2   | `_____`      |
-| rd    | `_____`      |
-| funct3| `_____`      |
-| funct7| `_____`      |
+| rs1   | `__011___`      |
+| rs2   | `____100_`      |
+| rd    | `___101__`      |
+| funct3| `____000_`      |
+| funct7| `01000000_____`      |
 
 **3. Execution Trace**
 * **Register Read:**
-    * Value at `rs1`: `0x________________`
-    * Value at `rs2`: `0x________________`
+    * Value at `rs1`: `0x_____00000000___________`
+    * Value at `rs2`: `0x_____00000000___________`
 * **Control Generation:**
-    * Calculated `alu_ctrl`: `___` (binary)
+    * Calculated `alu_ctrl`: `_000__` (binary)
 * **ALU Result:**
-    * Output: `0x________________`
+    * Output: `0x__00000000______________`
 
 **4. Write-Back Confirmation**
-* **Value written to `rd`:** `0x________________`
+* **Value written to `rd`:** `0x__00000000______________`
 * **Total Latency:** Calculate the time from Instruction Valid → ALU Result Valid.
-    * **Calculated:** `________ ns`
-    * **Simulated:** `________ ns`
+    * **Calculated:** `_____2___ ns`
+    * **Simulated:** `___10_____ ns`
 
 ---
 ### Submission
